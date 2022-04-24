@@ -28,4 +28,6 @@
   (aset js/globalThis "vscode" vscode)
   (setup-command context #'run-script))
 
+(defn deactivate [])
+
 (comment)

@@ -8,7 +8,8 @@
    :runtime :node
    :output-dir "out"
    :modules
-   {:congas {:exports {:activate congas.extension/activate}}
+   {:congas {:exports {:activate congas.extension/activate
+                       :deactivate congas.extension/deactivate}}
     ;; :nbb_core {:init-fn nbb.core/init}
     ;; :nbb_goog_string {:init-fn nbb.impl.gstring/init
     ;;                   :depends-on #{:nbb_core}
