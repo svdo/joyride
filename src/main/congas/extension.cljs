@@ -12,6 +12,7 @@
   (vscode/commands.registerCommand (-> command meta :command) #(command)))
 
 (defn- setup-command [^js context command]
+  (vscode/window.showInformationMessage "Registering!!!")
   (->> (register-command command)
        (register-disposable context)))
 
@@ -23,6 +24,7 @@
   (js/vscode.window.showInformationMessage (str "Hello " script)))
 ; /Users/pez/Desktop/empty/congas/scripts/hello.cljs
 (defn activate [^js context]
+  (vscode/window.showInformationMessage "Activating")
   (aset js/globalThis "vscode" vscode)
   (setup-command context #'run-script))
 
