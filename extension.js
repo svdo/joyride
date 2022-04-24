@@ -1,15 +1,17 @@
 const vscode = require("vscode");
-const congas = require("./out/congas.js");
+const congas = import('./out/congas.js');
 
 /**
  * @param {vscode.ExtensionContext} context
  */
-function activate(context) {
-  congas.activate(context);
+async function activate(context) {
+  const c = await congas;
+  c.activate(context);
 }
 
-function deactivate() {
-  congas.deactivate();
+async function deactivate() {
+  const c = await congas;
+  c.deactivate();
 }
 
 module.exports = {

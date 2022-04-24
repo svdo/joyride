@@ -1,8 +1,8 @@
 (ns congas.extension
   (:require
-   ["vscode" :as vscode]
-   ["nbb" :as nbb]
    ["path" :as path]
+   ["vscode" :as vscode]
+   [nbb.core :as nbb]
    [promesa.core :as p]))
 
 (defn register-disposable [^js context ^js disposable]
@@ -19,7 +19,7 @@
   (println "BOOM!")
   (let [ws-folder ^js (first js/vscode.workspace.workspaceFolders)
         ws-root ws-folder.uri.fsPath]
-    (nbb/loadFile (path/resolve ws-root ".congas/scripts/hello.cljs")))
+    (nbb/load-file (path/resolve ws-root ".congas/scripts/hello.cljs")))
   (js/vscode.window.showInformationMessage (str "Hello " script)))
 ; /Users/pez/Desktop/empty/congas/scripts/hello.cljs
 (defn activate [^js context]
