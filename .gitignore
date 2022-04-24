@@ -22,3 +22,5 @@ node_modules
 
 # Congas
 /out/
+out_congas_js.extension.js
+./extension.js

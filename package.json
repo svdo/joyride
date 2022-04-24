@@ -81,6 +81,8 @@
   },
   "devDependencies": {
     "rimraf": "^3.0.2",
-    "shadow-cljs": "^2.18.0"
+    "shadow-cljs": "^2.18.0",
+    "webpack": "^5.72.0",
+    "webpack-cli": "^4.9.2"
   }
 }
